@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+
+#Bienvenida
+print("\n"+70*"="+"\nBienvenido a mis Programas, de Federico Montalvan!!")
+print("El siguiente programa te ayuda invertir el sentido de lectura de las palabras ingresadas")
+print("\nQue lo disfrutes!\n"+70*"=")
+
+c=[] # Crearemos una lista c y añadiremos aquí las frases que solicitaremos que ingrese el usuario.
+f=[] # Crearemos una lista final que contendrá los carácteres con lectura al revés, esta lisa la usaremos en la opción de respuesta numero 1
+palabra=input("Escribe una palabra o frase: ") # Solicitamos que el usuario ingrese una palabra o frase y la almacenamos en la variable palabra.
+
+
+#Opcion de respuesta numero 1(mas larga)
+for letra in palabra: # hacemos un recorrido de cada letra y espacio de las palabras o palabra ingresada por el usuario en la variable palabra.
+    c.append(letra) # esas letras recorridas, las almacenamos como lista en la lista c.
+b=len(c) # Medimos la longitud de la lista c que acabamos de crear anteriormente para posteriormente utilizarla.
+# creremos un iterador numerico con el bucle "for", como un pulsador en este caso de números, que nos arrojará posiciones consecutivas
+# desde 0 hasta la última posicion de nuestra lista c, por ejemplo si escribimos "hola", nuestro iterador nos
+# dará las posiciones (0,1,2,3)
+for n in range (0,b):   
+    d=(c[((n+1)*-1)])   #ahora con esa formulita pediremos visualizar cada letra de la lista c pero comenzando desde menos 1, por ejemplo
+    f.append(d)         # si la lista tiene (0,1,2,3), la variable "d" almacenará cada letra pero en el orden(-1,-2,-3,-4), que luego la almacenaremos como lista en "f".
+g="".join(f)            # crearemos la varible "g" que unirá la lista nueva "f" para su lectura.
+print()
+print(70*"="+"\nRespuesta opcion 1\nEl resultado es: "+g)
+
+
+
+
+#Opcion de respuesta número 2 y mucho (mas corta.)
+#la lista c contiene los caracteres ingresados por el usuario.
+c.reverse()  # con la palabra reservada "reverse" invertimos el sentido de lectura de la lista c
+h="".join(c) # la variable "h" contendrá la lista c pero unida para su lectura, estamos usando "join"
+print()
+print("Respuesta opcion 2\nEl resultado es: "+h+"\n"+70*"=")
